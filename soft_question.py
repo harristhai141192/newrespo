@@ -7,7 +7,7 @@ import re
 conn = pymysql.connect(host='127.0.0.1', unix_socket='/var/run/mysqld/mysqld.sock',
                         user='root', passwd='123123123', db='newrespo', charset='utf8')
 cur = conn.cursor()
-cur.execute("USE sof_question")
+cur.execute("USE newrespo")
 random.seed(datetime.datetime.now())
 def store(question):
         cur.execute('INSERT INTO question (name) VALUES '
