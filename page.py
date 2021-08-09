@@ -4,10 +4,11 @@ import datetime
 import random
 import pymysql
 import re
+import sys
 conn = pymysql.connect(host='127.0.0.1', unix_socket='/var/run/mysqld/mysqld.sock',
-                        user='root', passwd=None, db='sof_question', charset='utf8')
+                        user='root', passwd='123123123', db='newrespo', charset='utf8')
 cur = conn.cursor()
-cur.execute("USE sof_question")
+cur.execute("USE newrespo")
 def query(pageNumber, pageSize):
         firstRecord = (pageNumber -1)* pageSize
         maxRecord = pageSize
@@ -17,9 +18,9 @@ def query(pageNumber, pageSize):
                 print(re)
 try:
         print("nhap so thu tu trang:")
-        a = int(input())
+        a = int(sys.argv[1])
         print("nhap so record trong trang")
-        b = int(input())
+        b = int(sys.argv[2])
         query(a,b)
 finally:
                 cur.close()
