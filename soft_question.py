@@ -5,7 +5,7 @@ import random
 import pymysql
 import re
 conn = pymysql.connect(host='127.0.0.1', unix_socket='/var/run/mysqld/mysqld.sock',
-                        user='root', passwd=None, db='sof_question', charset='utf8')
+                        user='root', passwd='123123123', db='sof_question', charset='utf8')
 cur = conn.cursor()
 cur.execute("USE sof_question")
 random.seed(datetime.datetime.now())
